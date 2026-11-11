@@ -1,0 +1,26 @@
+# Prontuário Pericial — versão instalável
+
+## Conteúdo
+- `index.html`: prontuário original, com integração PWA adicionada.
+- `manifest.webmanifest`: nome, ícones e configuração de instalação.
+- `sw.js`: cache do aplicativo para abertura offline.
+- `icons/`: ícones 192×192 e 512×512.
+
+## Publicar gratuitamente com GitHub Pages
+1. Entre em https://github.com/ e crie uma conta, se ainda não tiver.
+2. Crie um repositório novo, por exemplo `prontuario-pericial`.
+3. Extraia este ZIP no computador.
+4. No repositório, use **Add file → Upload files** e envie os arquivos e a pasta `icons` (envie o conteúdo extraído, não o ZIP).
+5. Confirme em **Commit changes**.
+6. Abra **Settings → Pages**.
+7. Em **Build and deployment**, escolha **Deploy from a branch**.
+8. Selecione a branch `main` e a pasta `/ (root)` e salve.
+9. Aguarde a publicação. O GitHub mostrará um endereço HTTPS para o site.
+10. No Android, abra esse endereço no Chrome, toque em ⋮ e escolha **Instalar app** ou **Adicionar à tela inicial**.
+
+## Observações importantes
+- A primeira abertura/publicação deve ser feita com internet. Depois que o aplicativo carregar e o service worker for instalado, a estrutura principal fica disponível offline.
+- A exportação ZIP com fotos depende do carregamento inicial do compactador JSZip. O service worker tenta armazená-lo em cache durante a instalação online. A exportação TXT não depende dele.
+- Os registros e as fotos ficam armazenados no armazenamento local do navegador/aplicativo neste aparelho. Eles não são sincronizados automaticamente com outros aparelhos.
+- O endereço HTTPS novo terá armazenamento separado do arquivo HTML aberto localmente. Se já houver vistorias preenchidas na versão antiga, exporte/guarde os dados antes de migrar; eles não serão transferidos automaticamente.
+- Faça cópias dos arquivos TXT/ZIP exportados. Limpar os dados do navegador ou desinstalar o aplicativo pode apagar os registros locais.
